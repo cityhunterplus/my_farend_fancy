@@ -26,7 +26,7 @@ body {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif;
   line-height: 1.45;
   /*font-size: 13px;*/
-  font-size: 0.813em;
+  font-size: 0.875em;
   color: #222;
 }
 
@@ -79,11 +79,6 @@ pre, code {
      border-bottom: 1px solid slategray;
      margin: 0 10px 10px 10px;
  }
- #content h2 {
-   background:steelblue;
-   color: white;
-   padding-left: 10px;
- }
  /**********************************************************
   * .wiki の見出しサイズおよび外観の変更
   * .wiki は wiki のコンテンツやチケットの説明、注記に使用されます。
@@ -100,7 +95,6 @@ pre, code {
 #content .wiki h4 {
     margin: 1.414em 0 0.5em;
     font-weight: inherit;
-    font-weight: bold;
     line-height: 1.2;
 }
 
@@ -663,7 +657,10 @@ div.wiki pre {
 }
 
 div.wiki p {
-  line-height: 165%;
+  /* Start オリジナル設定 2017.04.10 Shigeo Nakamura */
+  /* デフォルトの設定を打ち消し */
+  /*line-height: 165%;*/
+  /* End オリジナル設定 2017.04.10 Shigeo Nakamura */
 }
 
 div.wiki li {
@@ -984,18 +981,3 @@ table.revision-info a {
 table.revision-info a:hover {
   color:#D14848;
 }
-
-/* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
-/* 見出しにかかる編集ボタンなどの位置調整*/
-#content > .contextual:first-child {
-    margin-top: 8px;
-    margin-right: 8px;
-}
-#content > .contextual:first-child a {
-    color: yellow;
-}
-/* wiki ページは同じ行に h2 がないので色を変える。 */
-.controller-wiki #content > .contextual:first-child a {
-    color: #169;
-}
-/* End オリジナル設定 2017.04.08 Shigeo Nakamura */
