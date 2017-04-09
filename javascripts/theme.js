@@ -1,6 +1,5 @@
 $(function(){
   /* 外部リンクは新規ウィンドウで開く */
-  $("head").append('<script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?LhgDvOfyJKc%3D&box=kl25IBgluUE%3D&aa=1" charset="utf-8"></script>');
   $("a.external").attr("target","_blank");
   $("a.help").attr("target","_blank");
   $("div#footer a[href^='http://www.redmine.org/']").attr("target","_blank");
