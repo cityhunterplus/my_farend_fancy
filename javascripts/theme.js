@@ -7,7 +7,7 @@ $(function(){
   var lang = $("a.help").text() == "ヘルプ" ? "ja" : $("html").attr("lang");
   if (lang == "ja") {
     /* 言語が日本語のときはヘルプのリンク先をRedmine.JPの日本語訳にする */
-    $("a.help").attr("href", "http://redmine.jp/guide/");
+    $("a.help").attr("href", "http://guide.redmine.jp/");
 
     /* 検索におけるスコープを検索ボックスのプレースホルダーに表示 */
     $("body").attr("class").match(/controller-[\S]+/);

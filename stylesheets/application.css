@@ -24,16 +24,16 @@
 
 body {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif;
-  line-height: 1.45;
   /*font-size: 13px;*/
-  font-size: 0.875em;
+  font-size: 0.875em; /* 追加 */
+  line-height: 1.5; /* 追加 */
   color: #222;
 }
 
-p {margin-bottom: 1.3em;}
+p {margin-bottom: 1.3em;} /* 追加 */
 
 #main {
-  background-color: floralwhite; /* HSV(216,2,100) */
+  background-color: #fafcff; /* HSV(216,2,100) */
 }
 
 #header {
@@ -52,9 +52,11 @@ h1, h2, h3, h4 {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
 }
 
+/* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
 pre, code {
   font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
 }
+/* End オリジナル設定 2017.04.08 Shigeo Nakamura */
 
 #header h1 {
   font-size: 22px;
@@ -99,20 +101,31 @@ pre, code {
 }
 
 #content .wiki h1 {
-    margin-top: 0;
-    font-size: 3.157em;
+    margin-top: 30px;
+    font-size: 1.8em;
+	font-weight: bold;
 }
 
 #content .wiki h2 {
+    margin-top: 20px;
     background: none;
     color: black;
-    font-size: 2.369em;
+    font-size: 1.6em;
+	font-weight: bold;
     padding-left: 0;
 }
 
-#content .wiki h3 {font-size: 1.777em;}
+#content .wiki h3 {
+    margin-top: 20px;
+    font-size: 1.2em;
+	font-weight: bold;
+}
 
-#content .wiki h4 {font-size: 1.333em;}
+#content .wiki h4 {
+    margin-top: 20px;
+    font-size: 1.0em;
+	font-weight: bold;
+}
 /*
 #content .wiki h1 {
     font-size: 197%;
@@ -191,6 +204,12 @@ pre, code {
 #main-menu li a.new-issue, #main-menu li a.new-issue:hover {
   padding-left: 24px;
   background-image: url(../images/ticket_add.png)
+}
+
+
+#main-menu li a.time-entries, #main-menu li a.time-entries:hover {
+  padding-left: 24px;
+  background-image: url(../images/time.png)
 }
 
 #main-menu li a.gantt, #main-menu li a.gantt:hover, #main-menu li a.lgc, #main-menu li a.lgc:hover {
@@ -418,7 +437,7 @@ tr.priority-lowest a {
 
 .box {
   color: #222;
-  border-radius: 3px;
+  border-radius: 3px; /* 追加 */
   word-wrap: break-word;
 }
 
@@ -563,7 +582,7 @@ textarea.wiki-edit {
 
 div.issue {
   background-color: #ffffe6; /* HSV(60,10,100) */
-  border-radius: 3px;
+  border-radius: 3px; /* 追加 */
 }
 
 div.issue div.subject p {
@@ -648,7 +667,7 @@ p.other-formats {
 
 div.wiki pre {
   /* farend_basic: preで横スクロールバーを表示させずに折り返す */;
-  border-radius: 3px;
+  border-radius: 3px; /* 追加 */
   white-space: -moz-pre-wrap; /* Mozilla */
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
