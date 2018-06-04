@@ -101,30 +101,34 @@ pre, code {
 }
 
 #content .wiki h1 {
+    border-bottom: 1px dotted #bbb;
     margin-top: 30px;
+    color: #1e4e79;
     font-size: 2.4em;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #content .wiki h2 {
     margin-top: 20px;
     background: none;
-    color: black;
+    color: #2e75b5;
     font-size: 1.6em;
-	font-weight: bold;
+    font-weight: bold;
     padding-left: 0;
 }
 
 #content .wiki h3 {
-    margin-top: 20px;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
     font-size: 1.2em;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #content .wiki h4 {
     margin-top: 20px;
     font-size: 1.0em;
-	font-weight: bold;
+    font-weight: bold;
+    border: none;
 }
 /*
 #content .wiki h1 {
