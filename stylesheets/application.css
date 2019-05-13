@@ -5,6 +5,13 @@
 @import url(../../../stylesheets/application.css);
 
 /*
+ * 書式を設定できるエリアには、.wiki で囲われている。
+ * Wiki ページのメインコンテンツは、.wiki-page で囲われている。
+ * #content > .contextual > .wiki.wiki-page
+ *
+ */
+
+/*
  * color: #2A5685 -> #0c4d7f;
  *
  * color: #444 -> #222;
@@ -40,11 +47,7 @@ p {margin-bottom: 1.3em;} /* 追加 */
   /* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
   /* ヘッダーの配色を変更。変更する場合は #top-menu も合わせて変更すること。 */
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-  background: #1e5799; /* Old browsers */
-  background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  background:  #73a087; /* Old browsers */
   /* End オリジナル設定 2017.04.08 Shigeo Nakamura */
 }
 
@@ -83,13 +86,16 @@ pre, code {
  }
  /**********************************************************
   * .wiki の見出しサイズおよび外観の変更
-  * .wiki は wiki のコンテンツやチケットの説明、注記に使用されます。
+  * .wiki は wiki ページのコンテンツやチケットページの説明、注記に使用されます。
   **********************************************************/
 #content .wiki {
-    border: 1px solid gainsboro;
-    border-radius: .5em;
-    background-color: whitesmoke;
-    padding: 10px;
+    /*border: 1px solid gainsboro;*/
+    /*border-radius: .5em;*/
+    /*background-color: whitesmoke;*/
+    /*padding: 10px;*/
+    /* デフォルトの Wiki ページは余白が少なく見辛いので、余白を追加 */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 #content .wiki h1,
 #content .wiki h2,
@@ -118,6 +124,7 @@ pre, code {
 }
 
 #content .wiki h3 {
+    color: #9180ff;
     margin-top: 1.4em;
     margin-bottom: 1em;
     font-size: 1.2em;
@@ -462,61 +469,54 @@ input[type="submit"], input[type="reset"] {
   -webkit-appearance: button;
   cursor: pointer;
   font-size: 12px;
-  /* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
-  /* ボタンのサイズを修正 */
-  background: -moz-linear-gradient(top,#BFD9E5, #3D95B7 50%,#0080B3 50%,#0099CC);
-  background: -webkit-gradient(linear, left top, left bottom, from(#BFD9E5), color-stop(0.5,#3D95B7), color-stop(0.5,#0080B3), to(#0099CC));
-  color: #FFF;
+  /* Start オリジナル設定 2019.05.13 Shigeo Nakamura */
+  width: 100px;
+  padding: 10px 0;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  border: 1px solid #0099CC;
-  -moz-box-shadow: 1px 1px 1px rgba(000,000,000,0.3),inset 0px 0px 3px rgba(255,255,255,0.5);
-  -webkit-box-shadow: 1px 1px 1px rgba(000,000,000,0.3),inset 0px 0px 3px rgba(255,255,255,0.5);
-  text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
-  width: 100px;
-  padding: 10px 0;
-  /* End オリジナル設定 2017.04.08 Shigeo Nakamura */
+  /* End オリジナル設定 2019.05.13 Shigeo Nakamura */
 }
-/* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
-input[type="submit"]:hover,
+/* Start オリジナル設定 2019.05.13 Shigeo Nakamura */
+input[type="submit"] {
+  color: #FFF;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+input[type="submit"]:hover {
+  background-color: #0069d9;
+  border-color: #0069d9;
+}
+input[type="reset"] {
+  color: #212529;
+  background-color: #dae0e5;
+  border: 1px solid #d3d9df;
+}
 input[type="reset"]:hover {
-    text-shadow:0px 0px 3px #fff;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #666), color-stop(1.00, #111));
-    background: -webkit-linear-gradient(#666, #111);
-    background: -moz-linear-gradient(#666, #111);
-    background: -o-linear-gradient(#666, #111);
-    background: -ms-linear-gradient(#666, #111);
-    background: linear-gradient(#666, #111);
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
 }
 input[type="submit"] + a {
-    cursor: pointer;
-    font-size: 12px;
-    background: -moz-linear-gradient(top,#BFD9E5, #3D95B7 50%,#0080B3 50%,#0099CC);
-    background: -webkit-gradient(linear, left top, left bottom, from(#BFD9E5), color-stop(0.5,#3D95B7), color-stop(0.5,#0080B3), to(#0099CC));
-    color: #FFF;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border: 1px solid #0099CC;
-    -moz-box-shadow: 1px 1px 1px rgba(000,000,000,0.3),inset 0px 0px 3px rgba(255,255,255,0.5);
-    -webkit-box-shadow: 1px 1px 1px rgba(000,000,000,0.3),inset 0px 0px 3px rgba(255,255,255,0.5);
-    text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
-    width: 100px;
-    padding: 10px 20px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #FFF  !important;
+  background-color: #117a8b !important;
+  border: 1px solid #10707f !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  width: 100px;
+  padding: 10px 20px;
 }
 input[type="submit"] + a:hover {
-    text-decoration: none;
-    color:white;
-    text-shadow:0px 0px 3px #fff;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #666), color-stop(1.00, #111));
-    background: -webkit-linear-gradient(#666, #111);
-    background: -moz-linear-gradient(#666, #111);
-    background: -o-linear-gradient(#666, #111);
-    background: -ms-linear-gradient(#666, #111);
-    background: linear-gradient(#666, #111);
+  text-decoration: none;
+  background-color: #138496 !important;
+  border-color: #117a8b !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
 }
-/* End オリジナル設定 2017.04.08 Shigeo Nakamura */
+/* End オリジナル設定 2019.05.13 Shigeo Nakamura */
 
 /* テキストボックスで等幅フォントを使用 */
 
@@ -553,27 +553,27 @@ input[type="url"]:focus,
 textarea:focus,
 select:focus
 {
-    border-color: #51a7e8;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
+  border-color: #51a7e8;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
 }
 input[type="text"] {
-    font-size: 108%;
+  font-size: 108%;
 }
 input[type="checkbox"] {
-    font-size: 108%;
-    margin-top: 10px;
+  font-size: 108%;
+  margin-top: 10px;
 }
 label input[type="checkbox"] {
-    margin-top: 1px;
+  margin-top: 1px;
 }
 table input[type="checkbox"] {
-    margin-top: 1px;
+  margin-top: 1px;
 }
 table tr, table td{
-    padding: 3px;
+  padding: 3px;
 }
 .tabular label {
-    padding-top: 8px;
+  padding-top: 8px;
 }
 /* End オリジナル設定 2017.04.08 Shigeo Nakamura */
 
@@ -598,21 +598,21 @@ div.issue .next-prev-links {
 }
 
 div#issue_tree .contextual a[href*="/issues/new"] {
-    background-image: url("../images/ticket_add.png");
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    padding-bottom: 3px;
-    padding-left: 20px;
-    padding-top: 2px;
+  background-image: url("../images/ticket_add.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 2px;
 }
 
 div#relations .contextual a {
-    background-image: url("../images/add.png");
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    padding-bottom: 3px;
-    padding-left: 20px;
-    padding-top: 2px;
+  background-image: url("../images/add.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 2px;
 }
 
 .buttons {
@@ -698,7 +698,7 @@ div.wiki li {
 #top-menu {
   /* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
   /* ヘッダーの配色を変更。変更する場合は #header も合わせて変更すること。 */
-  background-color: 3f4c6b;
+  background-color: #51452B;
   /* End オリジナル設定 2017.04.08 Shigeo Nakamura */
 }
 
@@ -1003,4 +1003,39 @@ table.revision-info a {
 
 table.revision-info a:hover {
   color:#D14848;
+}
+
+#wiki_form a, #issue-form a {
+  width: 100px;
+  color: #212529;
+  background-color: #dae0e5;
+  border: 1px solid #d3d9df;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+#wiki_form a:hover, #issue-form a:hover {
+  color: #212529;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+}
+#issue-form .tabular a,
+#issue-form .tabular a:link,
+#issue-form .tabular a:visited {
+  width: auto;
+  font-size: 13px;
+  color: blue;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+#issue-form .tabular a:hover,
+#issue-form .tabular a:active {
+  color: purple;
+  text-decoration: underline;
+}
+.icon-edit {
+  padding-top: 8px;
 }

@@ -1,0 +1,50 @@
+; これを入れないとルートディレクトリまでたどってしまう。
+root = true
+
+# ファイル名の指定方法。
+# *				"/"" 以外の任意の文字列。
+# **			任意の文字列。
+# ?				任意の一文字。
+# [name]		name に一致するもの。
+# [!name]		name に一致しないもの。
+# {s1,s2,s3}	s1,s2,s3 に一致するもの。
+
+[*]
+# tab もしくは space を指定。
+indent_style = tab
+indent_size = 4
+#indent_width
+
+end_of_line = crlf
+
+charset = utf-8
+
+# 行末の空白を削除するかどうか。true、false。
+trim_trailing_whitespace = false
+
+# 最終行に空行を入れるかどうか。true、false。
+insert_final_newline = false
+
+[{*.php,*.js,*.html}]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[{*.css,*.scss}]
+indent_style = space
+indent_size = 2
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.yml]
+indent_style = space
+indent_size = 2
+
+[*.json]
+indent_style = space
+indent_size = 2
