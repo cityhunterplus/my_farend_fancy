@@ -55,6 +55,13 @@ h1, h2, h3, h4 {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
 }
 
+a, a:link, a:visited {
+  color: blue;
+}
+a:hover, a:active {
+  color: red;
+}
+
 /* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
 pre, code {
   font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
