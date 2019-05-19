@@ -55,12 +55,6 @@ h1, h2, h3, h4 {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
 }
 
-a, a:link, a:visited {
-  color: blue;
-}
-a:hover, a:active {
-  color: red;
-}
 
 /* Start オリジナル設定 2017.04.08 Shigeo Nakamura */
 pre, code {
@@ -605,21 +599,21 @@ div.issue .next-prev-links {
 }
 
 div#issue_tree .contextual a[href*="/issues/new"] {
-  background-image: url("../images/ticket_add.png");
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  padding-bottom: 3px;
-  padding-left: 20px;
-  padding-top: 2px;
+    background-image: url("../images/ticket_add.png");
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 2px;
 }
 
 div#relations .contextual a {
-  background-image: url("../images/add.png");
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  padding-bottom: 3px;
-  padding-left: 20px;
-  padding-top: 2px;
+    background-image: url("../images/add.png");
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 2px;
 }
 
 .buttons {
@@ -677,7 +671,7 @@ p.other-formats {
 /***** Wiki *****/
 
 div.wiki pre {
-  /* farend_basic: preで横スクロールバーを表示させずに折り返す */;
+  /* farend_basic: preで横スクロールバーを表示させずに折り返す */
   border-radius: 3px; /* 追加 */
   white-space: -moz-pre-wrap; /* Mozilla */
   white-space: -pre-wrap; /* Opera 4-6 */
@@ -692,6 +686,69 @@ div.wiki p {
   /*line-height: 165%;*/
   /* End オリジナル設定 2017.04.10 Shigeo Nakamura */
 }
+
+/* Start オリジナル設定 2019.05.13 Shigeo Nakamura */
+/*
+ * 見出しを青系にしたので、Wiki 内のリンクと区別がつきづらいので、
+ * Wiki 内のリンクを blue にした。
+ */
+div.wiki a,
+div.wiki a:link,
+div.wiki a:visited {
+  color: blue;
+}
+
+div.wiki a:hover,
+div.wiki a:active,
+div.wiki a.new {
+  color: red;
+}
+
+div.wiki a.wiki-anchor {
+  color: gray;
+}
+
+/*
+ * チケットおよび Wiki ページの編集画面のキャンセルをボタン化
+ * ID やクラスが割当てられていないので、a をボタン化。
+ */
+#wiki_form a, #issue-form a {
+  width: 100px;
+  color: #212529;
+  background-color: #dae0e5;
+  border: 1px solid #d3d9df;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+#wiki_form a:hover, #issue-form a:hover {
+  color: #212529;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+}
+/* 説明編集欄表示リンクもボタンになってしまうので、リセット */
+#issue-form .tabular a,
+#issue-form .tabular a:link,
+#issue-form .tabular a:visited {
+  width: auto;
+  font-size: 13px;
+  color: #169;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+#issue-form .tabular a:hover,
+#issue-form .tabular a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+.icon-edit {
+  padding-top: 8px;
+}
+/* End オリジナル設定 2019.05.13 Shigeo Nakamura */
 
 div.wiki li {
   margin-bottom: 4px;
@@ -1010,39 +1067,4 @@ table.revision-info a {
 
 table.revision-info a:hover {
   color:#D14848;
-}
-
-#wiki_form a, #issue-form a {
-  width: 100px;
-  color: #212529;
-  background-color: #dae0e5;
-  border: 1px solid #d3d9df;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-#wiki_form a:hover, #issue-form a:hover {
-  color: #212529;
-  background-color: #e2e6ea;
-  border-color: #dae0e5;
-}
-#issue-form .tabular a,
-#issue-form .tabular a:link,
-#issue-form .tabular a:visited {
-  width: auto;
-  font-size: 13px;
-  color: blue;
-  background-color: transparent;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-#issue-form .tabular a:hover,
-#issue-form .tabular a:active {
-  color: purple;
-  text-decoration: underline;
-}
-.icon-edit {
-  padding-top: 8px;
 }
